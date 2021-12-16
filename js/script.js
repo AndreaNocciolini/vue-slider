@@ -23,9 +23,18 @@ const app = new Vue (
               this.counter -= 1
               if (this.counter < 0) {
                 this.counter = this.images.length-1  
-              }   
+              }
             },
+            play: function() {
+              this.timer = setInterval(this.next, 2300)  
+            },
+            stop: function() {
+              clearInterval(this.timer)
+            }
         },
+        created(){
+            this.play()
+        }
         
     }
     
